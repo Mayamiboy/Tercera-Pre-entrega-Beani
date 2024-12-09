@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Buscar Autor{% endblock %}
+{% block content %}
+    <h2>Buscar un Autor</h2>
+    <form method="get">
+        <input type="text" name="q" placeholder="Buscar...">
+        <button type="submit">Buscar</button>
+    </form>
+    <ul>
+        {% for author in results %}
+            <li>{{ author.name }}</li>
+        {% empty %}
+            <li>No se encontraron resultados</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
